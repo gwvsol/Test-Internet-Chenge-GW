@@ -51,7 +51,7 @@ fi
 # ============================================================
 
 # ============= Проверка доступности интернета ===============
-# Проверяем 10 раз и ограничиваем время проверки 30 секндами
+# Проверяем 10 раз и ограничиваем время проверки 30 секундами
 testInternet()
 {
     ping $host -c 10 -w 30 &>/dev/null
@@ -80,15 +80,15 @@ else
     echo $(date +'%d-%m-%Y %T') "$CHeckInetGW2" >> $log
     #echo "$CHeckInetGW2"
     testInternet
-if [[ $rezTest -eq 0 ]]; then
-    echo $(date +'%d-%m-%Y %T') "$OnLine" >> $log
-    #echo "$OnLine"
-    exit 0
-else
-    echo $(date +'%d-%m-%Y %T') "$NoGW2" >> $log
-    #echo "$NoGW2"
-    exit 1
-fi
+    if [[ $rezTest -eq 0 ]]; then
+        echo $(date +'%d-%m-%Y %T') "$OnLine" >> $log
+        #echo "$OnLine"
+        exit 0
+    else
+        echo $(date +'%d-%m-%Y %T') "$NoGW2" >> $log
+        #echo "$NoGW2"
+        exit 1
+    fi
 fi
 }
 # ===========================================================
