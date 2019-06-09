@@ -76,7 +76,8 @@ network:
 crontab -e
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/15 * * * * /usr/local/bin/Test_Internet.sh
+*/10 * * * * /usr/local/bin/Test_Internet.sh # включение программы каждые 10 минут
 ```
+***
 
 
